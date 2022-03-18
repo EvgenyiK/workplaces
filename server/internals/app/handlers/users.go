@@ -5,8 +5,8 @@ import (
 	"errors"
 	"net/http"
 	"strconv"
-	"workplaces/internals/app/models"
-	"workplaces/internals/app/processors"
+	"workplaces/server/internals/app/models"
+	"workplaces/server/internals/app/processors"
 
 	"github.com/gorilla/mux"
 )

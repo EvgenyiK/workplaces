@@ -1,4 +1,4 @@
-module workplaces
+module workplaces/server
 
 go 1.18
 

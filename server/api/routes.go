@@ -1,7 +1,7 @@
 package api
 
 import (
-	"workplaces/internals/app/handlers"
+	"workplaces/server/internals/app/handlers"
 
 	"github.com/gorilla/mux"
 )

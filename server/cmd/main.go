@@ -4,8 +4,8 @@ import (
 	"context"
 	"os"
 	"os/signal"
-	"workplaces/internals/app"
-	"workplaces/internals/cfg"
+	"workplaces/server/internals/app"
+	"workplaces/server/internals/cfg"
 
 	log "github.com/sirupsen/logrus"
 )

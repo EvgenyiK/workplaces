@@ -2,8 +2,8 @@ package processors
 
 import (
 	"errors"
-	"workplaces/internals/app/db"
-	"workplaces/internals/app/models"
+	"workplaces/server/internals/app/db"
+	"workplaces/server/internals/app/models"
 )
 
 type UsersProcessor struct {

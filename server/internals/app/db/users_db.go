@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"workplaces/internals/app/models"
+	"workplaces/server/internals/app/models"
 
 	"github.com/georgysavva/scany/pgxscan"
 	log "github.com/sirupsen/logrus"
