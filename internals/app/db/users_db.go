@@ -2,9 +2,9 @@ package db
 
 import (
 	"context"
-	"database/sql"
 	"workplaces/internals/app/models"
 
+	"github.com/georgysavva/scany/pgxscan"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/jackc/pgx/v4/pgxpool"
@@ -38,9 +38,6 @@ func (storage *UsersStorage) UpdateUser(id int64, user models.User) error {
 
 	_, err := storage.databasePool.Exec(context.Background(), query, id, user.PCName, user.MacAdress, user.UserName)
 
-	if err == sql.ErrNoRows {
-		return err
-	}
 	if err != nil {
 		log.Errorln(err)
 		return err
@@ -60,4 +57,18 @@ func (storage *UsersStorage) DeleteUser(id int64) error {
 	}
 
 	return nil
+}
+
+func (storage *UsersStorage) GetUserById(id int64) models.User {
+	query := "SELECT id, pc_name, mac_adress, user_name FROM users WHERE id = $1"
+
+	var result models.User
+
+	err := pgxscan.Get(context.Background(), storage.databasePool, &result, query, id)
+
+	if err != nil {
+		log.Errorln(err)
+	}
+
+	return result
 }

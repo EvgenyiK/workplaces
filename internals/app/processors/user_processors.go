@@ -31,7 +31,8 @@ func (processor *UsersProcessor) CreateUser(user models.User) error {
 }
 
 func (processor *UsersProcessor) UpdateUser(id int64, user models.User) error {
-	if id != id {
+	us := processor.storage.GetUserById(id)
+	if us.Id != id {
 		return errors.New("user not found")
 	}
 
@@ -39,7 +40,8 @@ func (processor *UsersProcessor) UpdateUser(id int64, user models.User) error {
 }
 
 func (processor *UsersProcessor) DeleteUser(id int64) error {
-	if id != id {
+	us := processor.storage.GetUserById(id)
+	if us.Id != id {
 		return errors.New("user not found")
 	}
 
