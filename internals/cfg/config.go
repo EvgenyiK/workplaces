@@ -6,8 +6,8 @@ import (
 	"github.com/spf13/viper"
 )
 
-type Cfg struct{
-	Port string
+type Cfg struct {
+	Port   string
 	DbName string
 	DbUser string
 	DbPass string
@@ -16,8 +16,8 @@ type Cfg struct{
 }
 
 func LoadConfig() Cfg {
-	v := viper.New() 
-	v.SetEnvPrefix("SERV") 
+	v := viper.New()
+	v.SetEnvPrefix("SERV")
 	v.SetDefault("PORT", "8080")
 	v.SetDefault("DBUSER", "postgres")
 	v.SetDefault("DBPASS", "postgres")
@@ -28,13 +28,13 @@ func LoadConfig() Cfg {
 
 	var cfg Cfg
 
-	err := v.Unmarshal(&cfg) 
+	err := v.Unmarshal(&cfg)
 	if err != nil {
 		log.Panic(err)
 	}
 	return cfg
 }
 
-func (cfg *Cfg) GetDBString() string { 
+func (cfg *Cfg) GetDBString() string {
 	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", cfg.DbUser, cfg.DbPass, cfg.DbHost, cfg.DbPort, cfg.DbName)
 }

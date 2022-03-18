@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"os/signal"
+	"workplaces/internals/app"
 	"workplaces/internals/cfg"
 
 	log "github.com/sirupsen/logrus"
@@ -18,11 +19,11 @@ func main() {
 
 	server := app.NewServer(config, ctx)
 
-	go func() { 
-		oscall := <-c 
+	go func() {
+		oscall := <-c
 		log.Printf("system call:%+v", oscall)
-		server.Shutdown() 
-		cancel() 
+		server.Shutdown()
+		cancel()
 	}()
 
 	server.Serve()
