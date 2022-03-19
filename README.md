@@ -3,7 +3,7 @@
 список доступных комманд workclient --help
 
 
-#регистрация сервиса в systemd# 
+#регистрация сервиса в systemd
 
 создать фаил службы “/lib/systemd/system/echoservice.service” 
 
