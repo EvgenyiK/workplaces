@@ -27,6 +27,7 @@ const Minor = "0"
 const Fix = "1"
 const Verbal = "workplaces"
 
+
 func init()  {
 	fmt.Println(fmt.Sprintf("Version: %s.%s.%s-beta %s", Major, Minor, Fix, Verbal))
 }
@@ -40,7 +41,10 @@ func main() {
 	}
 
 	client.AddCommand(createUser())
-
+	client.AddCommand(deleteUser())
+	client.AddCommand(updateUser())
+	
+	
 	err := client.Execute()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)

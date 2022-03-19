@@ -6,14 +6,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-
-
-func createUser() *cobra.Command {
+func updateUser() *cobra.Command {
 	var runCmd = &cobra.Command{
-		Use:   "create",
-		Short: "create user where flags pc_name mac_adress user_name",
+		Use:   "update",
+		Short: "update user where flags id pc mac_adress user",
 		Run: func(cmd *cobra.Command, args []string) {
-			internals.Create(args)
+			internals.Update(args)
 		},
 	}
 
