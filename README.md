@@ -8,7 +8,7 @@
 создать фаил службы “/lib/systemd/system/workplaces.service” 
 
 после заполнения файла выполнить комманды:
-    sudo chmod 755 /lib/systemd/system/workplaces.service
-    sudo systemctl enable workplaces.service
-    sudo systemctl start workplaces
-    sudo journalctl -f -u workplaces
+sudo chmod 755 /lib/systemd/system/workplaces.service
+sudo systemctl enable workplaces.service
+sudo systemctl start workplaces
+sudo journalctl -f -u workplaces
