@@ -5,6 +5,6 @@
 
 
 ### Pегистрация сервиса в systemd
-создать фаил службы “/lib/systemd/system/echoservice.service” 
+создать фаил службы “/lib/systemd/system/workplaces.service” 
 
 
